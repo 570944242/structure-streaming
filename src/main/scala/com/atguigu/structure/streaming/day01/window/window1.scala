@@ -5,9 +5,9 @@ import java.sql.Timestamp
 import org.apache.spark.sql.SparkSession
 
 /**
-  * Author lzc
-  * Date 2019-09-24 16:50
-  */
+ * Author lzc
+ * Date 2019-09-24 16:50
+ */
 object window1 {
     def main(args: Array[String]): Unit = {
         val spark: SparkSession = SparkSession
@@ -21,7 +21,7 @@ object window1 {
         import org.apache.spark.sql.functions._
         val lines = spark.readStream
             .format("socket") // 设置数据源
-            .option("host", "hadoop201")
+            .option("host", "hadoop102")
             .option("port", 9999)
             .option("includeTimestamp", true) // 给产生的数据自动添加时间戳
             .load
@@ -31,8 +31,13 @@ object window1 {
             }
             .toDF("word", "ts")
             .groupBy(
+                
+                //参数一：df中表示时间戳的列
+                //参数二：窗口长度
+                //参数三：滑动步长
                 window($"ts", "4 minutes", "2 minutes"),
-                $"word")
+                $"window"
+            )
             .count()
         lines.writeStream
             .format("console")

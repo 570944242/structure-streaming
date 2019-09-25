@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../spark-structured-streaming/spark-realtime/spark-realtime.iml" filepath="$PROJECT_DIR$/../spark-structured-streaming/spark-realtime/spark-realtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/structure-streaming.iml" filepath="$PROJECT_DIR$/structure-streaming.iml" />
+    </modules>
+  </component>
+</project>

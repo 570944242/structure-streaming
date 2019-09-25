@@ -5,9 +5,9 @@ import org.apache.spark.sql.streaming.Trigger
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
 
 /**
-  * Author lzc
-  * Date 2019-09-24 14:14
-  */
+ * Author lzc
+ * Date 2019-09-24 14:14
+ */
 object FileSource1 {
     def main(args: Array[String]): Unit = {
         val spark: SparkSession = SparkSession
@@ -23,9 +23,7 @@ object FileSource1 {
             .load("C:\\Users\\lzc\\Desktop\\ss")
             /*.groupBy("sex")
             .sum("age")*/
-        
-        
-        //
+
         df.writeStream
             .format("console")
             .outputMode("update")

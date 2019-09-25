@@ -5,9 +5,9 @@ import org.apache.spark.sql.streaming.Trigger
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
 
 /**
-  * Author lzc
-  * Date 2019-09-24 14:14
-  */
+ * Author lzc
+ * Date 2019-09-24 14:14
+ */
 object FileSource {
     def main(args: Array[String]): Unit = {
         val spark: SparkSession = SparkSession
@@ -20,9 +20,9 @@ object FileSource {
         val df = spark.readStream
             .format("csv")
             .schema(userSchema)
-            .load("C:\\Users\\lzc\\Desktop\\ss")
-            .groupBy("sex")
-            .sum("age")
+            .load("E:\\StructureStreaming")
+            //.groupBy("sex")
+            // .sum("age")
         
         
         //

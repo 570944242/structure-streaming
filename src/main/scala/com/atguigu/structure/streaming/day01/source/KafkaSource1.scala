@@ -3,9 +3,9 @@ package com.atguigu.structure.streaming.day01.source
 import org.apache.spark.sql.SparkSession
 
 /**
-  * Author lzc
-  * Date 2019-09-24 15:14
-  */
+ * Author lzc
+ * Date 2019-09-24 15:14
+ */
 object KafkaSource1 {
     def main(args: Array[String]): Unit = {
         val spark: SparkSession = SparkSession
